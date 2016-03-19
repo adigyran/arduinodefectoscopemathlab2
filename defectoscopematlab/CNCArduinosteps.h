@@ -72,6 +72,8 @@ private:
 	 void StepsY(long stepsYf, long speedYf);
 	 void FreqStepsX(long stepsXf, long speedXf);
 	 void FreqStepsY(long stepsYf, long speedYf);
+	 void SetDirX(byte dirx);
+	 void SetDirY(byte diry);
 	 void GotoZero();
 	 static void StepXintr();
 	 static void StepYintr();

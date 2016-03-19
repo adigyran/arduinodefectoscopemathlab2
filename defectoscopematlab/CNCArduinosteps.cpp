@@ -359,6 +359,11 @@ void CNCArduinostepsClass::FreqStepsY(long stepsYf, long speedYf)
 	//Timer1.setPeriod(speedXf);
 	Timer3.start();
 }
+void CNCArduinostepsClass::SetDirX(byte dirx)
+{
+	digitalWrite(DirpinX, dirx);
+	DirX = dirx;
+}
 void CNCArduinostepsClass::GotoZero()
 {
 	if (pinsset) {
