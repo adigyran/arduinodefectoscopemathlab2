@@ -364,6 +364,11 @@ void CNCArduinostepsClass::SetDirX(byte dirx)
 	digitalWrite(DirpinX, dirx);
 	DirX = dirx;
 }
+void CNCArduinostepsClass::SetDirY(byte diry)
+{
+	digitalWrite(DirpinY, diry);
+	DirY = diry;
+}
 void CNCArduinostepsClass::GotoZero()
 {
 	if (pinsset) {
