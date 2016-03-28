@@ -51,18 +51,18 @@ void setup() {
 	//pinMode(3, INPUT);
 	pinMode(3, INPUT);
 	//pinMode(2, INPUT);
-	
-	attachInterrupt(3, yinti, FALLING);
-	attachInterrupt(2, yinti2, FALLING);
-	attachInterrupt(4, xinti, FALLING);
-    attachInterrupt(5, xinti2, FALLING);
+	CNCdefectoscope.init();
+	attachInterrupt(3, yinti, FALLING); //20
+	attachInterrupt(2, yinti2, FALLING); //21
+	attachInterrupt(4, xinti, FALLING); //19
+    attachInterrupt(5, xinti2, FALLING); //18
 	Serial.println(CNCdefectoscope.getcurrencoord().currentXs);
 	//Enablepin = 52;
 	//DirpinX = 46;
 	//DirpinY = 44;
 	CNCdefectoscope.setpins(46, 44, 13, 2, 52);
-	CNCdefectoscope.setcalibration(0.012, 0.024);
-	CNCdefectoscope.setdxdy(100, 100);
+	//CNCdefectoscope.setcalibration(0.012, 0.024);
+	//CNCdefectoscope.setdxdy(100, 100);
 }
 
 void yinti2()
@@ -197,6 +197,7 @@ void serialEvent()
 		String casestring = irr.substring(1, 4);
 		Serial.println(casestring);
 		Serial.println(lof);
+		//Serial.println(CNCdefectoscope.getcurrencoord().currentXs);
 		CNCdefectoscope.serialhandler(casestring, lof.toInt(),lof);
 		if (casestring.equals("X1"))
 		{

@@ -275,6 +275,7 @@ void CNCArduinostepsClass::StepsX(long stepsXf, long speedXf)
 			//Serial.print("x");
 			//Serial.println(i);
 			StepX(speedXf);
+			//dfdf
 			//delayMicroseconds(1000);
 			//pulseXelapsed = 0;
 			//}
